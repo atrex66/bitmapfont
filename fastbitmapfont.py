@@ -50,7 +50,7 @@ class FastBitmapFont:
         for i in text:
             q = ord(i) - self.fontparams.char_start_offset
             x = (q % self.fontparams.char_per_line) * self.fontparams.width
-            y = (q / self.fontparams.char_per_line) * self.fontparams.height
+            y = int(q / self.fontparams.char_per_line) * self.fontparams.height
             srcrect.x = x + self.fontparams.horizontal_offs
             srcrect.y = y + self.fontparams.vertical_offs
             char.fill(trans_color)
